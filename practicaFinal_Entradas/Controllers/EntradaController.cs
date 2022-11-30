@@ -180,7 +180,7 @@ namespace practicaFinal_Entradas.Controllers
             return NoContent();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete]
         [Route("api/[Controller]/{id:int}")]
         public IActionResult DeleteEntrada(
@@ -188,15 +188,19 @@ namespace practicaFinal_Entradas.Controllers
         {
             try
             {
-                var entrada = _entradaRepositorio.GetEntradaById(id);
-                if (entrada == null)
+                if (this.User.Identity.IsAuthenticated)
                 {
-                    return NotFound();
-                }
-                _entradaRepositorio.DeleteEntrada(entrada);
-                _entradaRepositorio.SaveAll();
+                    var entrada = _entradaRepositorio.GetEntradaById(id);
+                    if (entrada == null)
+                    {
+                        return NotFound();
+                    }
+                    _entradaRepositorio.DeleteEntrada(entrada);
+                    _entradaRepositorio.SaveAll();
 
-                return Ok();
+                    return Ok();
+                }
+                return BadRequest("Usuario no logueado.");
             }
             catch (Exception ex)
             {

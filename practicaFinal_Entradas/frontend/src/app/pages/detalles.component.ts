@@ -1,6 +1,8 @@
 ﻿import { Component, OnInit } from "@angular/core";
 import { Entradas } from "../services/entradas.services";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
+import { BehaviorSubject, first } from "rxjs";
+import { AccountService } from "../services/account.services";
 
 @Component({
     selector: "detalles-page",
@@ -20,10 +22,11 @@ export class DetallesPage implements OnInit {
     ciudad: string | null | undefined;
     pais: string | null | undefined;
 
-    constructor(public entrada: Entradas, private activatedRoute: ActivatedRoute) {
+
+    constructor(public entrada: Entradas, private activatedRoute: ActivatedRoute, private router: Router,) {
         this.activatedRoute.params.subscribe(params => {
             this.id = params["id"];
-        })
+        });
     }
 
     ngOnInit(): void {
@@ -38,5 +41,20 @@ export class DetallesPage implements OnInit {
                 this.ciudad = this.entrada.entrada.ciudad;
                 this.pais = this.entrada.entrada.pais;
             });
+    }
+
+    eliminar(): any {
+        this.entrada.eliminar(this.id)
+            .pipe(first())
+            .subscribe({
+                next: () => {
+                    this.router.navigate([''], { relativeTo: this.activatedRoute });
+                },
+                error: (error: any) => {
+                    console.log("Error al eliminar entrada");
+                    return;
+                }
+            });
+        return;
     }
 }

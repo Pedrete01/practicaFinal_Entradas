@@ -13,7 +13,6 @@ export class AccountService {
         private router: Router,
         private http: HttpClient
     ) {
-
     }
 
     register(Username: any, Email: any, Password: any) {
