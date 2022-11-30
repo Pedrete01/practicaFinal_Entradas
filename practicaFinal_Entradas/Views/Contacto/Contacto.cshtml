@@ -1,0 +1,53 @@
+﻿@model ContactoViewModel
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+}
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card card-body bg-light">
+            <h2>@ViewBag.Title</h2>
+            <form method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <div class="form-group">
+                    <label asp-for="Email">Email:</label>
+                    <input type="email" asp-for="Email" class="form-control"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+    
+                <div class="form-group">
+                    <label asp-for="Subject">Subject</label>
+                    <input type="text" asp-for="Subject" class="form-control" />
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Mensaje">Mensaje:</label>
+                    <textarea asp-for="Mensaje" rows="4" class="form-control"></textarea>
+                    <span asp-validation-for="Mensaje" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" asp-for="Autorizar" class="form-check-input"/>
+                    <label asp-for="Autorizar" class="form-check-label"> Aceptar <a href="../Home/Privacy" target="_blank">términos y condiciones.</a></label>
+                    <span asp-validation-for="Autorizar" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Enviar mensaje" class="btn btn-primary"/>
+                    <div class="text-success">
+                        @ViewBag.Mensaje
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

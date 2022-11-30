@@ -1,0 +1,32 @@
+﻿<div class="row">
+    <div class="d-flex flex-column">
+        <h3>Destacadas</h3>
+        <div class="d-xl-inline-flex">
+            <div class="card" *ngFor="let e of categoria.listaDestacadas" style="width: 18rem;">
+                <img class="card-img-top rounded" src="{{e.imagen}}" alt="{{e.entradaName}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{e.entradaName}}</h5>
+                    <p class="card-text">{{e.entradaDescripCorta}}</p> 
+                </div>
+                <div class="card-footer">
+                    <a href="/Home/Entradas/{{e.entradaId}}" class="btn btn-primary">Detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let c of categoria.listaCategorias" class="d-flex flex-column">
+        <h3>{{c.name}}</h3>
+        <div class="d-xl-inline-flex">
+            <div class="card" *ngFor="let e of c.entradas" style="width: 18rem;">
+                <img class="card-img-top rounded" src="{{e.imagen}}" alt="{{e.entradaName}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{e.entradaName}}</h5>
+                    <p class="card-text">{{e.entradaDescripCorta}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Home/Entradas/{{e.entradaId}}" class="btn btn-primary">Detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

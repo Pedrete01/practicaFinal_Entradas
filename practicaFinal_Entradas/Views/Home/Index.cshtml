@@ -1,0 +1,14 @@
+﻿@section Scripts {
+    <script src="~/frontend/main.js" asp-append-version="true"></script>
+    <script src="~/frontend/polyfills.js"></script>
+    <script src="~/frontend/runtime.js"></script>
+}
+@section head {
+    <base href="/Home" />
+    <link href="~/frontend/styles.css" rel="stylesheet" />
+}
+@{
+    ViewData["Title"] = "Home";
+}
+
+<app-root></app-root>

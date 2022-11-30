@@ -1,0 +1,31 @@
+﻿
+<div class="card mb-3">
+    <div>
+        <div>
+            <img class="img-fluid rounded-start" src="{{imagen}}" alt="{{nombre}}">
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">{{nombre}}</h1>
+                <h3 class="card-subtitle">{{ubicacion}}</h3>
+                <h4 class="card-subtitle">{{ciudad}}</h4>
+                <h5 class="card-subtitle">{{pais}}</h5>
+                <br />
+                <p class="card-text">{{descLarga}}</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{precio}} €</p>
+                <div class="def-number-input number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                    <input id="cant" class="quantity" min="1" max="6" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button id="buyButton" class="btn btn-success" (click)="entrada.comprar(id)">Comprar</button>
+                <button id="deleteButton" class="btn btn-success" (click)="entrada.eliminar(id)">Eliminar</button>
+                <button id="modifyButton" class="btn btn-success" (click)="entrada.modificar(id)">Modificar</button>
+            </div>
+        </div>
+    </div>
+</div>

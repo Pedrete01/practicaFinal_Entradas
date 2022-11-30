@@ -1,0 +1,53 @@
+﻿<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card card-body bg-light">
+            <h3>{{title}}</h3>
+            <form [formGroup]="formRegister" (submit)="send()">
+                <div class="form-group">
+                    <label for="Username">Nombre usuario</label>
+                    <input type="text" id="Username" class="form-control" formControlName="Username"/>
+                    <div *ngIf="formRegister?.get('Username')?.errors">
+                        <p class="alert-danger" *ngIf="formRegister?.get('Username')?.hasError('required')">Campo requerido</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="text" id="Email" class="form-control" formControlName="Email" />
+                    <div *ngIf="formRegister?.get('Email')?.errors">
+                        <p class="alert-danger" *ngIf="formRegister?.get('Email')?.hasError('required')">Campo requerido</p>
+                        <p class="alert-danger" *ngIf="formRegister?.get('Email')?.hasError('email')">Email no válido</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Contraseña</label>
+                    <input type="password" id="Password" class="form-control" formControlName="Password" />
+                    <div *ngIf="formRegister?.get('Password')?.errors">
+                        <p class="alert-danger" *ngIf="formRegister?.get('Password')?.hasError('required')">Campo requerido</p>
+                        <p class="alert-danger" *ngIf="formRegister?.get('Password')?.hasError('minlength')">Contraseña no válida</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="conPassword">Confirmar contraseña</label>
+                    <input type="password" id="conPassword" class="form-control" formControlName="conPassword" />
+                    <div *ngIf="formRegister?.get('conPassword')?.errors">
+                        <p class="alert-danger" *ngIf="formRegister?.get('conPassword')?.hasError('required')">Campo requerido</p>
+                        <p class="alert-danger" *ngIf="formRegister?.get('conPassword')?.hasError('minlength')">Contraseña no válida</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input id="Terms" type="checkbox" class="form-check-input" formControlName="Terms" />
+                        <label for="Terms" class="form-check-label">Aceptar <a href="../Home/Privacy" target="_blank">términos y condiciones</a></label>
+                    </div>
+                    <div *ngIf="formRegister?.get('Terms')?.errors">
+                        <p class="alert-danger" *ngIf="formRegister?.get('Terms')?.hasError('required')">Debes aceptar los términos y condiciones</p>
+                        <p class="alert-danger" *ngIf="formRegister?.get('Terms')?.hasError('requiredTrue')">Debes aceptar los términos y condiciones</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registro" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model Entrada
+@{
+    ViewData["Title"] = Model.entradaName;
+}
+
+<h3 class="my-5"> 
+    @Model.entradaName
+</h3>
+
+<div class="row gx-5">
+    <img alt="@Model.entradaName" src="@Model.imagen" class="img-fluid col-5"/>
+    <div class="col-7">
+        <h4>
+            @Model.entradaDescripCorta
+        </h4>
+        <p>
+            @Model.entradaDescripLarga
+        </p>
+        <p>
+            Vendidas: @Model.vendidas de @Model.stock
+        </p>
+        <h3 class="pull-right">
+            @Model.precio.ToString("c")
+        </h3>
+        <div class="addToCart">
+            <button id="buyButton" class="btn btn-success">Comprar</button>
+        </div>
+    </div>
+</div>

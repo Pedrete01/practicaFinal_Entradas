@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "practicaFinal_Entradas", "practicaFinal_Entradas\practicaFinal_Entradas.csproj", "{C26B68E9-9E27-47D6-AAFA-40795EACCB79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		a|Any CPU = a|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Nuevo|Any CPU = Nuevo|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.a|Any CPU.ActiveCfg = a|Any CPU
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.a|Any CPU.Build.0 = a|Any CPU
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.Debug|Any CPU.ActiveCfg = a|Any CPU
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.Debug|Any CPU.Build.0 = a|Any CPU
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.Nuevo|Any CPU.ActiveCfg = Nuevo|Any CPU
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.Nuevo|Any CPU.Build.0 = Nuevo|Any CPU
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26B68E9-9E27-47D6-AAFA-40795EACCB79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09AA4A44-6CF4-4C1F-8AD1-FA2FDBD3AB53}
+	EndGlobalSection
+EndGlobal
